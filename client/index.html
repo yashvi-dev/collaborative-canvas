@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎨 Collaborative Drawing Canvas</h1>
+            <div class="header-info">
+                <div class="user-count" id="userCount">Users: 0</div>
+                <div class="room-selector">
+                    <label for="roomSelect">Room:</label>
+                    <select id="roomSelect">
+                        <option value="default">Default</option>
+                    </select>
+                    <button id="newRoomBtn">+ New Room</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Drawing Tools -->
+                <section class="tool-section">
+                    <h3>Tools</h3>
+                    <div class="tool-buttons">
+                        <button class="tool-btn active" data-tool="brush" title="Brush">🖌️</button>
+                        <button class="tool-btn" data-tool="eraser" title="Eraser">🧹</button>
+                        <button class="tool-btn" data-tool="rectangle" title="Rectangle">▭</button>
+                        <button class="tool-btn" data-tool="circle" title="Circle">⭕</button>
+                        <button class="tool-btn" data-tool="line" title="Line">📏</button>
+                        <button class="tool-btn" data-tool="text" title="Text">A</button>
+                    </div>
+                </section>
+
+                <!-- Color Picker -->
+                <section class="tool-section">
+                    <h3>Color</h3>
+                    <div class="color-picker">
+                        <input type="color" id="colorInput" value="#000000">
+                        <div class="color-presets">
+                            <div class="color-preset" data-color="#FF6B6B"></div>
+                            <div class="color-preset" data-color="#4ECDC4"></div>
+                            <div class="color-preset" data-color="#45B7D1"></div>
+                            <div class="color-preset" data-color="#FFA07A"></div>
+                            <div class="color-preset" data-color="#98D8C8"></div>
+                            <div class="color-preset" data-color="#F7DC6F"></div>
+                            <div class="color-preset" data-color="#000000"></div>
+                            <div class="color-preset" data-color="#FFFFFF"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Brush Size -->
+                <section class="tool-section">
+                    <h3>Brush Size</h3>
+                    <input type="range" id="brushSize" min="1" max="50" value="5">
+                    <span id="brushSizeValue">5</span>px
+                </section>
+
+                <!-- Actions -->
+                <section class="tool-section">
+                    <h3>Actions</h3>
+                    <div class="action-buttons">
+                        <button id="undoBtn" title="Undo">↶ Undo</button>
+                        <button id="redoBtn" title="Redo">↷ Redo</button>
+                        <button id="clearBtn" title="Clear Canvas">🗑️ Clear</button>
+                    </div>
+                </section>
+
+                <!-- Save/Load -->
+                <section class="tool-section">
+                    <h3>Save/Load</h3>
+                    <div class="action-buttons">
+                        <button id="saveBtn" title="Save Canvas">💾 Save</button>
+                        <button id="loadBtn" title="Load Canvas">📂 Load</button>
+                        <input type="file" id="loadInput" accept=".json" style="display: none;">
+                    </div>
+                </section>
+
+                <!-- Online Users -->
+                <section class="tool-section">
+                    <h3>Online Users</h3>
+                    <div id="usersList" class="users-list"></div>
+                </section>
+
+                <!-- Performance Metrics -->
+                <section class="tool-section">
+                    <h3>Performance</h3>
+                    <div class="metrics">
+                        <div>FPS: <span id="fps">60</span></div>
+                        <div>Latency: <span id="latency">0</span>ms</div>
+                        <div>Strokes: <span id="strokeCount">0</span></div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Canvas Area -->
+            <main class="canvas-area">
+                <div class="canvas-wrapper">
+                    <canvas id="drawingCanvas"></canvas>
+                    <canvas id="cursorCanvas"></canvas>
+                    <canvas id="tempCanvas"></canvas>
+                </div>
+                <div class="canvas-info">
+                    <span id="canvasSize"></span>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Text Input Modal -->
+    <div id="textModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Enter Text</h3>
+            <input type="text" id="textInput" placeholder="Type your text here">
+            <div class="modal-buttons">
+                <button id="textConfirmBtn">Add Text</button>
+                <button id="textCancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Room Modal -->
+    <div id="roomModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Create New Room</h3>
+            <input type="text" id="newRoomName" placeholder="Room name">
+            <div class="modal-buttons">
+                <button id="roomConfirmBtn">Create</button>
+                <button id="roomCancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="websocket.js"></script>
+    <script src="canvas.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
