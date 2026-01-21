@@ -3,6 +3,12 @@
 A real-time multi-user drawing application where multiple people can draw simultaneously on the same canvas with live synchronization.
 
 ## Quick Start
+**Production Ready – Deployed Live**
+
+🔗 Live Demo: https://collaborative-canvas.onrender.com  
+
+[Watch the demo](https://www.loom.com/share/872f00a5ca2a49e8930fe28456942ca0)]
+(https://www.loom.com/share/872f00a5ca2a49e8930fe28456942ca0)
 
 ### Prerequisites
 - Node.js (v14 or higher)
