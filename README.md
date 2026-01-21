@@ -52,19 +52,19 @@ The application will automatically start and you can begin drawing!
 ## ✨ Features
 
 ### Core Features
-- ✅ **Drawing Tools**: Brush, eraser, rectangle, circle, line, and text
-- ✅ **Real-time Synchronization**: See other users' drawings as they draw
-- ✅ **User Indicators**: See where other users are currently drawing with cursor positions
-- ✅ **Conflict Resolution**: Handles simultaneous drawing gracefully
-- ✅ **Global Undo/Redo**: Undo/redo works across all users (each user can undo their own actions)
-- ✅ **User Management**: See who's online and their assigned colors
+-  **Drawing Tools**: Brush, eraser, rectangle, circle, line, and text
+-  **Real-time Synchronization**: See other users' drawings as they draw
+-  **User Indicators**: See where other users are currently drawing with cursor positions
+-  **Conflict Resolution**: Handles simultaneous drawing gracefully
+-  **Global Undo/Redo**: Undo/redo works across all users (each user can undo their own actions)
+-  **User Management**: See who's online and their assigned colors
 
 ### Bonus Features
-- ✅ **Mobile Touch Support**: Full touch support for drawing on mobile devices
-- ✅ **Room System**: Create and join multiple isolated drawing canvases
-- ✅ **Drawing Persistence**: Save and load canvas drawings as JSON files
-- ✅ **Performance Metrics**: Real-time FPS counter, latency display, and stroke count
-- ✅ **Creative Tools**: Shapes (rectangle, circle, line) and text tool
+-  **Mobile Touch Support**: Full touch support for drawing on mobile devices
+-  **Room System**: Create and join multiple isolated drawing canvases
+-  **Drawing Persistence**: Save and load canvas drawings as JSON files
+-  **Performance Metrics**: Real-time FPS counter, latency display, and stroke count
+-  **Creative Tools**: Shapes (rectangle, circle, line) and text tool
 
 ## 🎮 Usage
 
@@ -145,48 +145,7 @@ collaborative-canvas/
 4. **Browser Compatibility**: Requires modern browsers with Canvas API and WebSocket support (Chrome, Firefox, Safari, Edge).
 5. **Memory**: Very large drawings with thousands of strokes may consume significant memory.
 
-## 🐛 Troubleshooting
-
-### Server won't start
-- Ensure port 3000 is not in use: `lsof -i :3000` (Mac/Linux) or check Task Manager (Windows)
-- Install dependencies: `npm install`
-
-### Can't see other users' drawings
-- Check browser console for errors
-- Ensure WebSocket connection is established (check network tab)
-- Verify both users are in the same room
-
-### Drawing appears laggy
-- Check latency display in sidebar
-- Ensure stable internet connection
-- Try reducing brush size or drawing speed
-
-## 📊 Performance
-
-- **Frame Rate**: Maintains 60 FPS on modern devices
-- **Network**: Optimized event batching reduces bandwidth usage
-- **Scalability**: Tested with up to 10 simultaneous users
-- **Memory**: Efficient stroke storage and rendering
-
-## 🕒 Time Spent
-
-This project was developed over approximately 15-20 hours, including:
-- Core drawing functionality: 4 hours
-- Real-time synchronization: 3 hours
-- Undo/redo system: 3 hours
-- Room system and bonus features: 4 hours
-- Testing and bug fixes: 3 hours
-- Documentation: 2 hours
 
 ## 📝 License
 
 MIT License - feel free to use this project for learning or personal projects.
-
-## 🙏 Acknowledgments
-
-Built as an assignment submission demonstrating:
-- Real-time web application development
-- WebSocket communication
-- Canvas API mastery
-- State synchronization techniques
-- Collaborative systems architecture
