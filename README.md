@@ -2,7 +2,7 @@
 
 A real-time multi-user drawing application where multiple people can draw simultaneously on the same canvas with live synchronization.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -28,7 +28,7 @@ http://localhost:3000
 
 The application will automatically start and you can begin drawing!
 
-## 🧪 Testing with Multiple Users
+##  Testing with Multiple Users
 
 ### Method 1: Multiple Browser Windows/Tabs
 1. Start the server: `npm start`
@@ -49,7 +49,7 @@ The application will automatically start and you can begin drawing!
 2. Share the URL with multiple people
 3. Everyone can draw simultaneously
 
-## ✨ Features
+##  Features
 
 ### Core Features
 -  **Drawing Tools**: Brush, eraser, rectangle, circle, line, and text
@@ -98,30 +98,7 @@ The application will automatically start and you can begin drawing!
 - Click "+ New Room" to create a new isolated canvas
 - Each room has its own drawing state
 
-## 🏗️ Architecture
-
-See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed technical documentation.
-
-## 📁 Project Structure
-
-```
-collaborative-canvas/
-├── client/
-│   ├── index.html          # Main HTML file
-│   ├── style.css           # Stylesheet
-│   ├── canvas.js           # Canvas drawing logic
-│   ├── websocket.js        # WebSocket client
-│   └── main.js             # Application initialization
-├── server/
-│   ├── server.js           # Express + Socket.io server
-│   ├── rooms.js            # Room management
-│   └── drawing-state.js    # Canvas state management
-├── package.json
-├── README.md
-└── ARCHITECTURE.md
-```
-
-## 🔧 Technical Details
+## Technical Details
 
 ### Technologies Used
 - **Frontend**: Vanilla JavaScript, HTML5 Canvas API
@@ -137,13 +114,6 @@ collaborative-canvas/
 4. **Conflict Resolution**: Server-side state management ensures consistency across clients
 5. **Efficient Redrawing**: Canvas state is rebuilt from operation history when needed
 
-## ⚠️ Known Limitations/Bugs
-
-1. **Text Tool**: Text is drawn directly to canvas (not vectorized like strokes). Undo/redo works but text is part of the image once drawn.
-2. **Shape Tools**: Shapes are stored as start/end points. Very large shapes may have slight rendering differences across browsers.
-3. **Network Latency**: On very slow connections, drawing may appear laggy. This is mitigated by client-side prediction.
-4. **Browser Compatibility**: Requires modern browsers with Canvas API and WebSocket support (Chrome, Firefox, Safari, Edge).
-5. **Memory**: Very large drawings with thousands of strokes may consume significant memory.
 
 
 ## 📝 License
