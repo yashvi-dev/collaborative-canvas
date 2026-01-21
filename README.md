@@ -5,7 +5,7 @@ A real-time multi-user drawing application where multiple people can draw simult
 ## Quick Start
 **Production Ready – Deployed Live**
 
-🔗 Live Demo: https://collaborative-canvas.onrender.com  
+🔗 Live Demo: https://collaborative-canvas-ok02.onrender.com
 
 [Watch the demo](https://www.loom.com/share/872f00a5ca2a49e8930fe28456942ca0)]
 (https://www.loom.com/share/872f00a5ca2a49e8930fe28456942ca0)
